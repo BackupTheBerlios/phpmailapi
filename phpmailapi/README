@@ -1,0 +1,33 @@
+You need the following packages:
+
+Requirements:
+- php-4.3.0 or higher
+- PEAR (PHP Extension and Application Repository), comes with 4.1.0 or higher
+
+==========================================================================
+
+Integration:
+
+require_once("phpmailapi.inc"); // include phpmailapi
+
+$options = array('mta'		=> "sendmail",	// sendmail or postfix
+				 'storage	=> "mysql",		// mysql or psql
+				 'imap'		=> "cyrus");	// cyrus or courier
+
+$pma = new phpmailapi($options);
+
+// ex. 1 to add a new email address to a domain
+$pma->addEmailAdress("mydomain.com", "me@mydomain.com");
+
+// ex. 2 get all email addresses of a domain
+$pma->getAllEmailAdresses("mydomain.com");
+==========================================================================
+
+All methodes are documented in the function matrix at http://...berlios...
+
+
+If any problems occur, please feel free to send me an email to
+am@meindlsoft.com
+
+Have fun!
+   Alex
